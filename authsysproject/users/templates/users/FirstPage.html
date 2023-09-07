@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <Title> MY FIRST HTML WEB PAGE </Title>
+    <style>
+        body {
+            background-color: beige;
+        }
+
+        h1 {
+            background-color: green;
+        }
+
+        h2 {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> <strong>KENYATTA UNIVERSITY</strong> <b>MINI WEB PAGE</b> </h1>
+    <div style="background: grey;">
+        <p> <em>This is my Kenyatta University</em> <i>mini web page. Welcome!</i> </p>
+        <a href="https://www.ku.ac.ke/" Title="Kenyatta University"> Link to Kenyatta University Website</a>
+        <br>
+        <img src="KU_logo.webp" alt="Kenyatta University"
+            style="border-color:black; border-style:dotted; border-radius:50px;">
+        </br>
+    </div>
+
+    <h2>SWIM LANES </h2>
+    <P>These are activity diagrams whose activities are grouped or partitioned according to the departments where they
+        occur or the people who execute those activities.
+        <span style="background:blueviolet;">They are important in </span>
+    <div style="background:yellow;">
+        <ol type="1">
+            <li>Modelling dynamic view of the business system</li>
+            <li>Modelling complex conditional algorithms</li>
+            <li>Modeliing complex concurrent activities or parallel</li>
+    </div>
+    </ol>
+
+    <h3>PREFORMATTING</h3>
+    <pre>
+        <p>Component diagrams have interfaces of two types:
+            1. Provided
+            2. Required
+        </p>
+    </pre>
+    <a href="mailto: 6661.2020@students.ku.ac.ke?subject= class assignment">please send emails here</a>
+</body>
+<hr>
+<table border="20">
+    <thead><b>TABLE</b></thead>
+    <tr>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+    </tr>
+    <tr>
+        <td>Monica</td>
+        <td>Grace</td>
+        <td>Angela</td>
+    </tr>
+    <tr>
+        <td>Brain</td>
+        <td>Eliud</td>
+        <td>Chad</td>
+    </tr>
+    <tr>
+        <td>Betty</td>
+        <td>Esther</td>
+        <td>Candy</td>
+    </tr>
+    <tr>
+        <td>Benson</td>
+        <td>Ethan</td>
+        <td>Carlos</td>
+    </tr>
+</table>
+
+<hr>
+<form name="MY FORM" method="POST" border="50" height="100" width="100">
+    <fieldset>
+        <legend>Client Details</legend>
+        <label for="name">Name</label>
+        <input type="text" id="Name" />
+        <br><br>
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" />
+    </fieldset>
+    <fieldset>
+        <legend>Order Details</legend>
+        <label for="Quantity">Quantity</label>
+        <input type="text" id="Quantity" />
+        <br><br>
+        <label for="Remarks">Remarks</label>
+        <br>
+        <textarea cols="40" rows="10" id="Remarks"></textarea>
+    </fieldset>
+    <fieldset>
+        <label for="apple">Apple</label>
+        <input type="checkbox" name="fruit" value="apple" />
+    </fieldset>
+    <fieldset>
+        <label for="Mr.">Mr.</label>
+        <input type="radio" name="title" value="Mr." />
+        <label for="Mrs.">Mrs.</label>
+        <input type="radio" name="title" value="Mrs.">
+    </fieldset>
+    <fieldset>
+        <label for="gender">Gender:</label>
+        <select name="gender">
+            <option value="value 1" selected="selected">male</option>
+            <option value="value 2">female</option>
+            <option value="value 3">other</option>
+        </select>
+    </fieldset>
+    <fieldset>
+        <input type="submit" name="submitBtn" value="Apply Now" />
+        <input type="reset" name="resetBtn" value="Reset the form" />
+    </fieldset>
+    <fieldset>
+        <input type="image" src="submit.gif" name="submitBtn" alt="Submit" size="10" />
+        <input type="button" value="Click Me" />
+    </fieldset>
+</form>
+
+</html>

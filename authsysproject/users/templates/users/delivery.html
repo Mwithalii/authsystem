@@ -1,0 +1,405 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Delivery</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'matapp/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'matapp/css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'matapp/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'matapp/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'matapp/css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'matapp/css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'matapp/css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'matapp/css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'matapp/css/jquery.timepicker.css' %}">
+
+    
+    <link rel="stylesheet" href="{% static 'matapp/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'matapp/css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'matapp/css/style.css' %}">
+  </head>
+  <body>
+    
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="{% url 'homepage' %}">Materna<span>Care</span></a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item active"><a href="{% url 'homepage' %}" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+	          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Services
+              </a>
+              <div class="dropdown-menu" aria-labelledby="servicesDropdown">
+                <a class="dropdown-item" href="{% url 'antenatal' %}">Antenatal Care</a>
+                <a class="dropdown-item" href="{% url 'delivery' %}">Delivery</a>
+                <a class="dropdown-item" href="{% url 'postnatal' %}">Postnatal Care</a>
+              </div>
+            </li>
+	          <li class="nav-item"><a href="{% url 'doctors' %}" class="nav-link">Doctors</a></li>
+	          <li class="nav-item"><a href="{% url 'blog' %}" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+              <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Login Page</a></li>
+	          <li class="nav-item cta"><a href="{% url 'contact' %}" class="nav-link" data-toggle="modal" data-target="#modalRequest"><span>Make an Appointment</span></a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+
+    <section class="home-slider owl-carousel">
+      <div class="slider-item bread-item" style="background-image: url({% static 'users/images/bg_1.png' %});" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container" data-scrollax-parent="true">
+          <div class="row slider-text align-items-end">
+            <div class="col-md-7 col-sm-12 ftco-animate mb-5">
+              <p class="breadcrumbs" data-scrollax=" properties: { translateY: '70%', opacity: 1.6}"><span class="mr-2"><a href="{% url 'homepage' %}">Home</a></span> <span>Delivery</span></p>
+              <h1 class="mb-3" data-scrollax=" properties: { translateY: '70%', opacity: .9}">Delivery Care</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- End header -->    
+
+
+
+   <!-- user_info.html -->
+   <section>
+    <form name="MY FORM" method="POST" border="100" height="100" width="100" action="{% url 'delivery' %}">
+        {% csrf_token %}
+        <fieldset>
+          <b>
+            <legend><h3><b>Delivery</b></h3></legend>
+            <div>
+              <label for="duration">During of pregnancy (weeks)</label>
+              <input type="text" id="Duration" name="duration" />
+              <label  style= " margin-left: 50px;">HIV tested? </label>
+              <label for="Yes" style= " margin-left: 10px;" >Yes</label>
+              <input type="radio" name="hiv" value="Yes" />
+              <label for="No" style= " margin-left: 5px;" >No</label>
+              <input type="radio" name="hiv" value="No">
+
+              <label  style= " margin-left: 20px;">If HIV not done or Negative at ANC, counsel and test. </label>
+
+              <label for="Reactive" style= " margin-left: 50px;" >Reactive</label>
+              <input type="radio" name="hiv_type" value="Reactive" />
+              <label for="Non-Reactive" style= " margin-left: 5px;">Non-Reactive</label>
+              <input type="radio" name="hiv_type" value="Non-Reactive" />
+              <label for="Not_Tested" style= " margin-left: 5px;">Not Tested</label>
+              <input type="radio" name="hiv_type" value="Not_Tested" />
+
+              <br>
+              <p><i>Duration: {{ duration }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                HIV: {{ hiv }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  HIV_Type: {{ hiv_type }}</i></p>
+            </div>
+
+            <br>
+
+             <div>
+              <label for="delivery_mode">Mode of Delivery</label>
+              <input type="text" id="Delivery" name="delivery_mode" />
+              <label for="date" style= " margin-left: 50px;">Date</label>
+              <input type="text" id="Date" name="date" />
+              <label for="blood" style= " margin-left: 50px;">Blood Loss (Light/Medium/Heavy)</label>
+              <input type="text" id="Blood_Loss" name="blood" />
+              <label for="pre_eclampsia" style= " margin-left: 50px;">Pre-Eclampsia</label>
+              <input type="text" id="Pre-Eclampsia" name="pre_eclampsia" />
+              
+              <br>
+              <p><i>Mode of Delivery: {{ delivery_mode }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Date: {{ date }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Blood Loss: {{ blood }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                Pre-Eclampsia: {{ pre_eclampsia }}</i></p>
+             </div>
+            
+            <br>
+
+            <div>
+              <label for="eclampsia" >Eclampsia</label>
+              <input type="text" id="Eclampsia" name="eclampsia" />
+              <label  style= " margin-left: 50px;">Obstructed Labour </label>
+              <label for="Yes" style= " margin-left: 10px;" >Yes</label>
+              <input type="radio" name="obstructed_labour" value="Yes" />
+              <label for="No" style= " margin-left: 5px;" >No</label>
+              <input type="radio" name="obstructed_labour" value="No">
+              <label for="condition" style= " margin-left: 50px;">Condition of Mother</label>
+              <textarea cols="20" rows="1" id="Condition" name="condition"></textarea>
+              <label  style= " margin-left: 50px;">Rescuscitation done? </label>
+              <label for="Yes" style= " margin-left: 10px;" >Yes</label>
+              <input type="radio" name="rescuscitation" value="Yes" />
+              <label for="No" style= " margin-left: 5px;" >No</label>
+              <input type="radio" name="rescuscitation" value="No">
+
+              <br>
+              <p><i>Eclampsia: {{ eclampsia }}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Obstructed Labour: {{ obstructed_labour }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Mother's Condition: {{ condition }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                Rescuscitation: {{ rescuscitation }}</i></p>
+            </div>
+            
+            <br>
+
+            <div>
+              <label  >Apgar Score: </label>
+              <label for="min_1" style= " margin-left: 10px;">1 Min:</label>
+              <input type="text" id="Min_1" name="min_1" />
+              <label for="min_5" style= " margin-left: 10px;">5 Min:</label>
+              <input type="text" id="Min_5" name="min_5" />
+              <label for="min_10" style= " margin-left: 10px;">10 Min:</label>
+              <input type="text" id="Min_10" name="min_10" />
+  
+              <br>
+              <p style= " margin-left: 150px;"><i>1 Min: {{ min_1 }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                5 Min : {{ min_5 }}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                10 Min: {{ min_10 }}</i></p>
+            </div>
+            
+            <br>
+
+            <div>
+              <label >Meconium stained liquor (grade) 0,1,2,3, Drugs administered at delivery: </label>
+              <label  style= " margin-left: 10px;" >Mother Oxytocin/Syntocinon </label>
+              <label for="Yes" style= " margin-left: 10px;" >Yes</label>
+              <input type="radio" name="oxy" value="Yes" />
+              <label for="No" style= " margin-left: 5px;" >No</label>
+              <input type="radio" name="oxy" value="No">
+              <label  style= " margin-left: 15px;" >HAART </label>
+              <p style= " margin-left: 750px;"> HAART: {{ oxy }}</p>
+  
+              <label  >Baby:</label>
+              <label for="vit" style= " margin-left: 10px;">Vit K</label>
+              <input type="checkbox" name="vit" value="Vit K" style= " margin-left: 10px;"/>
+              <label for="teo" style= " margin-left: 50px;">TEO</label>
+              <input type="checkbox" name="teo" value="TEO" style= " margin-left: 10px;"/>
+              <label style= " margin-left: 15px;">Cord care, apply CHX ** OD for at least 10 days or till the cord drops off</label>
+  
+              <p> Done: {{ vit }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Done: {{ teo }}</p>
+              <label >Baby HIV exposed: NVP prophylaxis</label>
+            </div>
+
+            <br>
+
+            <div>
+              <label for="weight">Birth Weight (kg)</label>
+              <input type="text" id="Weight" name="weight" />
+              <label for="length" style= " margin-left: 50px;">Birth Length (cm)</label>
+              <input type="text" id="Length" name="length" />
+              <label for="head" style= " margin-left: 50px;">Head Circumference (cm)</label>
+              <input type="text" id="Head" name="head" />
+  
+              <br>
+                <p><i>Birth Weight: {{ weight }}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  Birth Length: {{ length }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  Head Circumference : {{ head }} </i></p>  
+            </div>
+            
+            <br>
+            <div>
+              <label >Place of delivery: </label>
+              <label for="Health Facility" style= " margin-left: 15px;" >Health facility</label>
+              <input type="radio" name="place" value="Health Facility" />
+              <label for="Home" style= " margin-left: 15px;" >Home</label>
+              <input type="radio" name="place" value="Home">
+              <label for="other" style= " margin-left: 15px;">Other (Specify)</label>
+              <input type="text" id="Other" name="other" />
+  
+              <br>
+                <p><i>Place of delivery: {{ place }}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  Other: {{ other }}</i></p>
+            </div>
+
+            <br>
+            <div>
+              <label  >Conducted by:</label>
+              <label for="nurse" style= " margin-left: 10px;">Nurse</label>
+              <input type="checkbox" name="conducted_by" value="Nurse" style= " margin-left: 10px;"/>
+              <label for="midwife" style= " margin-left: 50px;">Midwife</label>
+              <input type="checkbox" name="conducted_by" value="Midwife" style= " margin-left: 10px;"/>
+              <label for="clinical" style= " margin-left: 50px;">Clinical Officer</label>
+              <input type="checkbox" name="conducted_by" value="Clinical Officer" style= " margin-left: 10px;"/>
+              <label for="doc" style= " margin-left: 50px;">Doctor</label>
+              <input type="checkbox" name="conducted_by" value="Doctor" style= " margin-left: 10px;"/>
+              <label for="other2" style= " margin-left: 50px;">Other (Specify)</label>
+              <input type="text" id="Other2" name="other" />
+  
+              <br>
+                <p><i>Conducted by: {{ conducted_by }}   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  Other: {{ other2 }} </i></p>
+            </div>
+          </b>
+        </fieldset>
+        <fieldset>
+          <br>
+          <button style="margin-left: 600px;" type="submit" name="submitBtn">
+            <img src="{% static 'users/images/submit.gif' %}" alt="Submit" />
+          </button>
+          <br>          
+      </fieldset>
+    </form>
+</section>
+
+<hr>
+
+  <section>
+    <b>
+      <p style= " margin-left: 50px;"> Note: 1. The baby should be brestfed within 1 hour after delivery <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. Keep the baby warm (Kangaroo mother care skin to skin) <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. Delay bathing the baby for at least 24 hours after birth <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. If pre-term or low birth weight less than 2.5kg (2500gms), initiate KMC at least 18 hours per day. </p>
+    </b>
+  </section>
+
+<hr>
+
+
+<!-- Breastfeeding-->
+<div style="border: 1px solid black;">
+    <h3><b><u> Good Positioning For BreastFeeding </u></b></h3>
+    <h3><b><u> Good Position </u></b></h3>
+
+    <div class="block-21 mb-4 d-flex">
+      <a class="blog-img mr-4" style="background-image: url({% static 'users/images/delivery.png' %});"></a>
+      <div class="text">
+        <h3 class="heading"><p>Is the infant correctly positioned? Positioning refers to how the baby is: <br> 1. Infant's head and body straight <br> 2. Infant facing the mother with the nose opposite the nipple <br> 3. Infant's body close to the mother's body (infant's tummy to Mother's tummy) <br> 4. Mother supporting infant's whole body and not just neck and shoulder.</p></h3>
+        <h4>All the 4 signs of correct positioning must be present to decide there is correct positioning.</h4>
+      </div>
+    </div>
+
+    <h3><b><u> Good Attachment </u></b></h3>
+    <div class="block-21 mb-4 d-flex">
+      <a class="blog-img mr-4" style="background-image: url({% static 'users/images/delivery.png' %});"></a>
+      <div class="text">
+        <h3 class="heading"><p>Is the infant able to attach? To check for attachment look for: <br> 1. Chin touching the breast <br> 2. Mouth wide open <br> 3. Lower lip turned outward <br> 4. More areola seen above than below the mouth.</p></h3>
+        <h4>Again all the 4 signs of good attachment must be present for one to decide the infant has good attachment</h4>
+      </div>
+    </div>       
+  </div>
+  <div>
+  <div class="block-21 mb-4 d-flex">
+    <div class="text" >
+      <h3 style="text-align: right;">Signs of Effective Suckling:</h3>
+      <h3 class="heading"><p style="text-align: right;"> 1. Slow deep sucks, sometimes pausing <br> 2. Chicks round when suckling <br> 3. Baby releases breast when milk is finished or he/she is satisfied <br> 4. Mother supporting infant's whole body and not just neck and shoulders.</p></h3>
+      <h3>How to attach:</h3>
+      <h3 class="heading"><p style="text-align: left;">1. Touch the baby's upper lip with your nipple <br> 2. Wait until the baby's mouth is open wide <br> 3. Move the baby quickly onto your breast, aiming the baby's lower lip well below the nipple <br> 4. Mother feels relaxed</p></h3>
+      <h6 class="heading"><p style="text-align: left;"><b>NB: During breastfeeding, show the mother correct positioning and attachment.  Chlorhexidine 7.1% delivering 4%</b></p></h6>
+    </div>
+  </div>
+  </div>
+  
+
+
+<!-- Footer -->    
+
+<footer class="ftco-footer ftco-bg-dark ftco-section">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md-3">
+        <div class="ftco-footer-widget mb-4">
+          <h2 class="ftco-heading-2">MaternaCare.</h2>
+          <p>Embrace the warmth of our digital embrace, where we're here to guide and uplift you throughout your incredible journey to motherhood.</p>
+        </div>
+        <ul class="ftco-footer-social list-unstyled float-md-left float-lft ">
+          <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+          <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+          <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <div class="ftco-footer-widget mb-4 ml-md-5">
+          <h2 class="ftco-heading-2">Quick Links</h2>
+          <ul class="list-unstyled">
+            <li><a href="#" class="py-2 d-block">About</a></li>
+            <li><a href="#" class="py-2 d-block">Features</a></li>
+            <li><a href="#" class="py-2 d-block">Projects</a></li>
+            <li><a href="#" class="py-2 d-block">Blog</a></li>
+            <li><a href="#" class="py-2 d-block">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4 pr-md-4">
+        <div class="ftco-footer-widget mb-4">
+          <h2 class="ftco-heading-2">Recent Blog</h2>
+          <div class="block-21 mb-4 d-flex">
+            <a class="blog-img mr-4" style="background-image: url({% static 'users/images/image_1.png' %});"></a>
+            <div class="text">
+              <h3 class="heading"><a href="https://www.pregactive.com/blog/best-pregnancy-blogs">12 Best Pregnany Blogs in 2023</a></h3>
+              <div class="meta">
+                <div><a href="#"><span class="icon-calendar"></span> Dec 08, 2020</a></div>
+                <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="block-21 mb-4 d-flex">
+            <a class="blog-img mr-4" style="background-image: url({% static 'users/images/image_1.png' %});"></a>
+            <div class="text">
+              <h3 class="heading"><a href="https://www.pregactive.com/blog/best-pregnancy-blogs">12 Best Pregnany Blogs in 2022</a></h3>
+              <div class="meta">
+                <div><a href="#"><span class="icon-calendar"></span> Dec 08, 2020</a></div>
+                <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="ftco-footer-widget mb-4">
+          <h2 class="ftco-heading-2">Office</h2>
+          <div class="block-23 mb-3">
+            <ul>
+              <li><span class="icon icon-map-marker"></span><span class="text">123 Health Avenue, Westlands, Nairobi, Kenya</span></li>
+              <li><a href="#"><span class="icon icon-phone"></span><span class="text">+254 715 402 174</span></a></li>
+              <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@maternacare.com</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+
+        <p>All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://www.linkedin.com/in/mwithaliidiana/" target="_blank">Mwithalii</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+    <script src="{% static 'matapp/js/jquery.min.js' %}"></script>
+    <script src="{% static 'matapp/js/jquery-migrate-3.0.1.min.js' %}"></script>
+    <script src="{% static 'matapp/js/popper.min.js' %}"></script>
+    <script src="{% static 'matapp/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'matapp/js/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'matapp/js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'matapp/js/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'matapp/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'matapp/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'matapp/js/aos.js' %}"></script>
+    <script src="{% static 'matapp/js/jquery.animateNumber.min.js' %}"></script>
+    <script src="{% static 'matapp/js/bootstrap-datepicker.js' %}"></script>
+    <script src="{% static 'matapp/js/jquery.timepicker.min.js' %}"></script>
+    <script src="{% static 'matapp/js/scrollax.min.js' %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="{% static 'matapp/js/google-map.js' %}"></script>
+    <script src="{% static 'matapp/js/main.js' %}"></script>
+
+
+  </body>
+</html>

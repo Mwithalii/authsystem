@@ -1,0 +1,461 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>About</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'matapp/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'matapp/css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'matapp/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'matapp/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'matapp/css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'matapp/css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'matapp/css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'matapp/css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'matapp/css/jquery.timepicker.css' %}">
+
+    
+    <link rel="stylesheet" href="{% static 'matapp/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'matapp/css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'matapp/css/style.css' %}">
+  </head>
+  <body>
+    
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="{% url 'homepage' %}">Materna<span>Care</span></a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item active"><a href="{% url 'homepage' %}" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+	          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Services
+              </a>
+              <div class="dropdown-menu" aria-labelledby="servicesDropdown">
+                <a class="dropdown-item" href="{% url 'antenatal' %}">Antenatal Care</a>
+                <a class="dropdown-item" href="{% url 'delivery' %}">Delivery</a>
+                <a class="dropdown-item" href="{% url 'postnatal' %}">Postnatal Care</a>
+              </div>
+            </li>
+	          <li class="nav-item"><a href="{% url 'doctors' %}" class="nav-link">Doctors</a></li>
+	          <li class="nav-item"><a href="{% url 'blog' %}" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+              <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Login Page</a></li>
+	          <li class="nav-item cta"><a href="{% url 'contact' %}" class="nav-link" data-toggle="modal" data-target="#modalRequest"><span>Make an Appointment</span></a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+
+    <section class="home-slider owl-carousel">
+      <div class="slider-item bread-item" style="background-image: url({% static 'users/images/bg_1.png' %});" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container" data-scrollax-parent="true">
+          <div class="row slider-text align-items-end">
+            <div class="col-md-7 col-sm-12 ftco-animate mb-5">
+              <p class="breadcrumbs" data-scrollax=" properties: { translateY: '70%', opacity: 1.6}"><span class="mr-2"><a href="{% url 'homepage' %}">Home</a></span> <span>About</span></p>
+              <h1 class="mb-3" data-scrollax=" properties: { translateY: '70%', opacity: .9}">About Us</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+		<section class="ftco-section">
+    	<div class="container">
+    		<div class="row d-md-flex">
+	    		<div class="col-md-6 ftco-animate img about-image order-md-last" style="background-image: url({% static 'users/images/about.png' %});">
+	    		</div>
+	    		<div class="col-md-6 ftco-animate pr-md-5 order-md-first">
+		    		<div class="row">
+		          <div class="col-md-12 nav-link-wrap mb-5">
+		            <div class="nav ftco-animate nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+		              <a class="nav-link active" id="v-pills-whatwedo-tab" data-toggle="pill" href="#v-pills-whatwedo" role="tab" aria-controls="v-pills-whatwedo" aria-selected="true">What we do</a>
+
+		              <a class="nav-link" id="v-pills-mission-tab" data-toggle="pill" href="#v-pills-mission" role="tab" aria-controls="v-pills-mission" aria-selected="false">Our mission</a>
+
+		              <a class="nav-link" id="v-pills-goal-tab" data-toggle="pill" href="#v-pills-goal" role="tab" aria-controls="v-pills-goal" aria-selected="false">Our goal</a>
+		            </div>
+		          </div>
+		          <div class="col-md-12 d-flex align-items-center">
+		            
+		            <div class="tab-content ftco-animate" id="v-pills-tabContent">
+
+		              <div class="tab-pane fade show active" id="v-pills-whatwedo" role="tabpanel" aria-labelledby="v-pills-whatwedo-tab">
+		              	<div>
+			                <h2 class="mb-4"> Dear Father and Mother, <br> Congratulations on this pregnancy! </h2>
+			              	<p>At MaternaCare, we are dedicated to providing comprehensive maternal health solutions that empower and support expectant and new mothers on their unique journeys. Our web app offers a holistic platform designed to enhance prenatal and postnatal care through personalized guidance, educational resources, and accessible healthcare tools. Through cutting-edge technology and a user-centric approach, we aim to improve maternal well-being, foster a sense of community, and ensure a healthier future for both mothers and their newborns.</p>
+				            </div>
+		              </div>
+
+		              <div class="tab-pane fade" id="v-pills-mission" role="tabpanel" aria-labelledby="v-pills-mission-tab">
+		                <div>
+			                <h2 class="mb-4">Digital Maternal Ecosystem</h2>
+			              	<p>Our mission is to revolutionize maternal health by offering a digital ecosystem that prioritizes the well-being of mothers. We strive to empower women with the knowledge, tools, and connections they need to make informed decisions about their health during pregnancy and beyond. By harnessing the power of technology, we aim to bridge gaps in maternal care, break down barriers, and create a supportive environment where every mother feels empowered, educated, and cared for.</p>
+			                
+				            </div>
+		              </div>
+
+		              <div class="tab-pane fade" id="v-pills-goal" role="tabpanel" aria-labelledby="v-pills-goal-tab">
+		                <div>
+			                <h2 class="mb-4">Improve Maternal Health Care</h2>
+			              	<p> Our goal at MaternaCare is to be a driving force in reducing maternal mortality rates and improving maternal health outcomes. We are committed to providing accessible, evidence-based information and tools that enable mothers to navigate their pregnancy journey with confidence. Through continuous innovation, collaboration with healthcare professionals, and fostering a vibrant community, we aspire to create a positive impact on maternal health, ensuring that every woman receives the care and support she deserves, regardless of her background or location..</p>
+			                
+				            </div>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+    	</div>
+    </section>
+
+    <section class="ftco-section-2">
+    	<div class="container-wrap">
+      	<div class="row d-flex no-gutters">
+      		<div class="col-md-6 img" style="background-image: url({% static 'users/images/about_2.png' %});">
+      		</div>
+      		<div class="col-md-6 d-flex">
+      			<div class="about-wrap">
+      				<div class="heading-section heading-section-white mb-5 ftco-animate">
+		            <h2 class="mb-2">Maternacare with a personal touch</h2>
+		            <p>Embrace the warmth of our digital embrace, where we're here to guide and uplift you throughout your incredible journey to motherhood.</p>
+		          </div>
+      				<div class="list-services d-flex ftco-animate">
+      					<div class="icon d-flex justify-content-center align-items-center">
+      						<span class="icon-check2"></span>
+      					</div>
+      					<div class="text">
+	      					<h3>Well Experienced Gynaecologist</h3>
+	      					<p>Welcome to a world of care, support, and knowledge as you embark on this beautiful journey of motherhood with us.</p>
+      					</div>
+      				</div>
+      				<div class="list-services d-flex ftco-animate">
+      					<div class="icon d-flex justify-content-center align-items-center">
+      						<span class="icon-check2"></span>
+      					</div>
+      					<div class="text">
+	      					<h3>High Technology Facilities</h3>
+	      					<p>Step into our virtual haven designed to nurture you through every trimester and beyond. Welcome to a community that celebrates the miracle of life.</p>
+      					</div>
+      				</div>
+      				<div class="list-services d-flex ftco-animate">
+      					<div class="icon d-flex justify-content-center align-items-center">
+      						<span class="icon-check2"></span>
+      					</div>
+      					<div class="text">
+	      					<h3>Comfortable Clinics</h3>
+	      					<p>Step into a world of maternal care that's as unique as your pregnancy journey. Welcome to an empowering community dedicated to you.</p>
+      					</div>
+      				</div>
+      			</div>
+      		</div>
+      	</div>
+      </div>
+    </section>
+
+    <section class="ftco-section testimony-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <h2 class="mb-2">Testimonies</h2>
+            <span class="subheading">Our Happy Mothers & Fathers Say</span>
+          </div>
+        </div>
+        <div class="row justify-content-center ftco-animate">
+          <div class="col-md-8">
+            <div class="carousel-testimony owl-carousel ftco-owl">
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({% static 'users/images/person_1.png' %})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5">Being a mother, especially a new one, has never been easier. MaternaCare has greatly helped in my journey </p>
+                    <p class="name">Angela Melo</p>
+                    <span class="position">New Mother</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({% static 'users/images/person_1.png' %})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5">I've experienced the benefit of this web app as I saw my wife use it throughout our second pregnancy. It's the best</p>
+                    <p class="name">Dennis Marua</p>
+                    <span class="position">Husband & Father</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({% static 'users/images/person_1.png' %})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5">The doctors are simply amazing. Thank you MaternaCare</p>
+                    <p class="name">Joyce Mwangi</p>
+                    <span class="position">Mother</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({% static 'users/images/person_1.png' %})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5">I love everything about this web app.</p>
+                    <p class="name">Emily Ndwale</p>
+                    <span class="position">Wife</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({% static 'users/images/person_1.png' %})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5">Simply amazing</p>
+                    <p class="name">Ezekiel Banda</p>
+                    <span class="position">Father</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url({% static 'users/images/bg_1.png' %});" data-stellar-background-ratio="0.5">
+    	<div class="container">
+    		<div class="row d-flex align-items-center">
+    			<div class="col-md-3 aside-stretch py-5">
+    				<div class=" heading-section heading-section-white ftco-animate pr-md-4">
+	            <h2 class="mb-3">Achievements</h2>
+	            <p>Embrace the warmth of our digital embrace, where we're here to guide and uplift you throughout your incredible journey to motherhood.</p>
+	          </div>
+    			</div>
+    			<div class="col-md-9 py-5 pl-md-5">
+		    		<div class="row">
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="10">0</strong>
+		                <span>Years of Experience</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="200">0</strong>
+		                <span>Qualified Gynaecologists</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="4000">0</strong>
+		                <span>Happy Smiling Mothers</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="300">0</strong>
+		                <span>Patients Per Year</span>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+	      </div>
+    	</div>
+    </section>
+
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-3">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">MaternaCare.</h2>
+              <p>Embrace the warmth of our digital embrace, where we're here to guide and uplift you throughout your incredible journey to motherhood.</p>
+            </div>
+            <ul class="ftco-footer-social list-unstyled float-md-left float-lft ">
+              <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+              <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+              <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <div class="ftco-footer-widget mb-4 ml-md-5">
+              <h2 class="ftco-heading-2">Quick Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="#" class="py-2 d-block">About</a></li>
+                <li><a href="#" class="py-2 d-block">Features</a></li>
+                <li><a href="#" class="py-2 d-block">Projects</a></li>
+                <li><a href="#" class="py-2 d-block">Blog</a></li>
+                <li><a href="#" class="py-2 d-block">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4 pr-md-4">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Recent Blog</h2>
+              <div class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" style="background-image: url({% static 'users/images/image_1.png' %});"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="https://www.pregactive.com/blog/best-pregnancy-blogs">12 Best Pregnany Blogs in 2023</a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="icon-calendar"></span> Dec 08, 2020</a></div>
+                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" style="background-image: url({% static 'users/images/image_1.png' %});"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="https://www.pregactive.com/blog/best-pregnancy-blogs">12 Best Pregnany Blogs in 2022</a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="icon-calendar"></span> Dec 08, 2020</a></div>
+                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Office</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><span class="icon icon-map-marker"></span><span class="text">123 Health Avenue, Westlands, Nairobi, Kenya</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+254 715 402 174</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@maternacare.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p>All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://www.linkedin.com/in/mwithaliidiana/" target="_blank">Mwithalii</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modalRequest" tabindex="-1" role="dialog" aria-labelledby="modalRequestLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalRequestLabel">Make an Appointment</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="{% url 'form' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+              <!-- <label for="appointment_name" class="text-black">Full Name</label> -->
+              <input type="text" class="form-control" id="appointment_name" placeholder="Full Name">
+            </div>
+            <div class="form-group">
+              <!-- <label for="appointment_email" class="text-black">Email</label> -->
+              <input type="text" class="form-control" id="appointment_email" placeholder="Email">
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <!-- <label for="appointment_date" class="text-black">Date</label> -->
+                  <input type="text" class="form-control appointment_date" placeholder="Date">
+                </div>    
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <!-- <label for="appointment_time" class="text-black">Time</label> -->
+                  <input type="text" class="form-control appointment_time" placeholder="Time">
+                </div>
+              </div>
+            </div>
+            
+
+            <div class="form-group">
+              <!-- <label for="appointment_message" class="text-black">Message</label> -->
+              <textarea name="" id="appointment_message" class="form-control" cols="30" rows="10" placeholder="Message"></textarea>
+            </div>
+            <div class="form-group">
+              <input type="submit" value="Make an Appointment" class="btn btn-primary">
+            </div>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <script src="{% static 'matapp/js/jquery.min.js' %}"></script>
+  <script src="{% static 'matapp/js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'matapp/js/popper.min.js' %}"></script>
+  <script src="{% static 'matapp/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'matapp/js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'matapp/js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'matapp/js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'matapp/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'matapp/js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'matapp/js/aos.js' %}"></script>
+  <script src="{% static 'matapp/js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'matapp/js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'matapp/js/jquery.timepicker.min.js' %}"></script>
+  <script src="{% static 'matapp/js/scrollax.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'matapp/js/google-map.js' %}"></script>
+  <script src="{% static 'matapp/js/main.js' %}"></script>
+    
+  </body>
+</html>

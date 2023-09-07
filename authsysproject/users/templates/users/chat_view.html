@@ -1,0 +1,104 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AI</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'matapp/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'matapp/css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'matapp/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'matapp/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'matapp/css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'matapp/css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'matapp/css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'matapp/css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'matapp/css/jquery.timepicker.css' %}">
+
+    
+    <link rel="stylesheet" href="{% static 'matapp/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'matapp/css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'matapp/css/style.css' %}">
+  </head>
+  <body>
+    
+	  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="main-navbar">
+	    <div class="container">
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a href="{% url 'homepage' %}" class="btn" style="color: white; background-color: #fd5e14; margin-right: 10px; "type="submit" id="header-links"> MaternaCare HomePage </a></li>
+              <li class="nav-item"><a href="{% url 'home' %}" class="btn" style="color: white; background-color: #fd5e14; margin-left: 10px; "type="submit" id="header-links"> Login Page </a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+
+    
+
+
+<section style= "height: 60vh; background-image: url({% static 'users/images/chat.png' %})">
+    <label style="color: white; background-color: white;"><h4><b>Warning: This is a chat model and should not be mistaken for medical advice. <br> Contact your trusted doctor for serious matters and for further clarification! </b></h4></label>
+    <br><br><br><br><br>
+    <form method="post" action="{% url 'chat_view' %}" >
+      <b>
+        {% csrf_token %}
+        <input type="text" name="user_input" style= " margin-left: 650px; color: white; background-color: white;">
+        <button type="submit" style="color: white; background-color: #fd5e14;" id="body-link-row">Send</button>
+      </b>
+    </form>
+    <div >
+        {% if response %}
+            {{ response }}
+        {% endif %}
+    </div>
+</section>
+
+
+<footer class="ftco-footer ftco-bg-dark ftco-section">
+    <div class="container">
+      <div class="row mb-5">
+ 
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+
+          <p>All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://www.linkedin.com/in/mwithaliidiana/" target="_blank">Mwithalii</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script src="{% static 'matapp/js/jquery.min.js' %}"></script>
+<script src="{% static 'matapp/js/jquery-migrate-3.0.1.min.js' %}"></script>
+<script src="{% static 'matapp/js/popper.min.js' %}"></script>
+<script src="{% static 'matapp/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'matapp/js/jquery.easing.1.3.js' %}"></script>
+<script src="{% static 'matapp/js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'matapp/js/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'matapp/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'matapp/js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'matapp/js/aos.js' %}"></script>
+<script src="{% static 'matapp/js/jquery.animateNumber.min.js' %}"></script>
+<script src="{% static 'matapp/js/bootstrap-datepicker.js' %}"></script>
+<script src="{% static 'matapp/js/jquery.timepicker.min.js' %}"></script>
+<script src="{% static 'matapp/js/scrollax.min.js' %}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="{% static 'matapp/js/google-map.js' %}"></script>
+<script src="{% static 'matapp/js/main.js' %}"></script>
+  
+</body>
+</html>
+

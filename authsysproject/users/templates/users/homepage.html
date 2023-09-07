@@ -1,0 +1,902 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MaternaCare</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'matapp/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'matapp/css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'matapp/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'matapp/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'matapp/css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'matapp/css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'matapp/css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'matapp/css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'matapp/css/jquery.timepicker.css' %}">
+
+    
+    <link rel="stylesheet" href="{% static 'matapp/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'matapp/css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'matapp/css/style.css' %}">
+  </head>
+  <body>
+    
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="{% url 'homepage' %}">Materna<span>Care</span></a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item active"><a href="{% url 'homepage' %}" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+	          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Services
+              </a>
+              <div class="dropdown-menu" aria-labelledby="servicesDropdown">
+                <a class="dropdown-item" href="{% url 'antenatal' %}">Antenatal Care</a>
+                <a class="dropdown-item" href="{% url 'delivery' %}">Delivery</a>
+                <a class="dropdown-item" href="{% url 'postnatal' %}">Postnatal Care</a>
+              </div>
+            </li>
+	          <li class="nav-item"><a href="{% url 'doctors' %}" class="nav-link">Doctors</a></li>
+	          <li class="nav-item"><a href="{% url 'blog' %}" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+              <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Login Page</a></li>
+	          <li class="nav-item cta"><a href="{% url 'contact' %}" class="nav-link" data-toggle="modal" data-target="#modalRequest"><span>Make an Appointment</span></a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+
+    <section class="home-slider owl-carousel">
+      <div class="slider-item" style="background-image: url({% static 'users/images/bg_1.png' %});">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text align-items-center" data-scrollax-parent="true">
+            <div class="col-md-6 col-sm-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+              <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Modern Maternal Care in a Calm and Relaxed Environment</h1>
+              <p class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Embrace the warmth of our digital embrace, where we're here to guide and uplift you throughout your incredible journey to motherhood.</p>
+              <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="#" class="btn btn-primary px-4 py-3">Make an Appointment</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-item" style="background-image: url({% static 'users/images/bg_2.png' %});">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text align-items-center" data-scrollax-parent="true">
+            <div class="col-md-6 col-sm-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+              <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">MaternaCare</h1>
+              <p class="mb-4">At the heart of motherhood.</p>
+              <p><a href="#" class="btn btn-primary px-4 py-3">Make an Appointment</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-intro">
+    	<div class="container">
+    		<div class="row no-gutters">
+    			<div class="col-md-3 color-1 p-4">
+    				<h3 class="mb-4">Emergency Cases</h3>
+    				<p>Embrace the warmth of our digital embrace, where we're here to guide and uplift you throughout your incredible journey to motherhood.</p>
+    				<span class="phone-number">+ (254) 456 7890</span>
+    			</div>
+    			<div class="col-md-3 color-2 p-4">
+    				<h3 class="mb-4">Opening Hours</h3>
+    				<p class="openinghours d-flex">
+    					<span>Monday - Friday</span>
+    					<span>8:00 - 19:00</span>
+    				</p>
+    				<p class="openinghours d-flex">
+    					<span>Saturday</span>
+    					<span>10:00 - 17:00</span>
+    				</p>
+    				<p class="openinghours d-flex">
+    					<span>Sunday</span>
+    					<span>10:00 - 16:00</span>
+    				</p>
+    			</div>
+    			<div class="col-md-6 color-3 p-4">
+    				<h3 class="mb-2">Make an Appointment</h3>
+    				<form action="#" class="appointment-form">
+	            <div class="row">
+	            	<div class="col-sm-4">
+	                <div class="form-group">
+			              <div class="select-wrap">
+                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                      <select name="" id="" class="form-control">
+                      	<option value="">Department</option>
+                        <option value="">Obstetrics</option>
+                        <option value="">Gynecology</option>
+                        <option value="">Pediatrics</option>
+                        <option value="">Laboratory and Diagnostic Imaging</option>
+                      </select>
+                    </div>
+			            </div>
+	              </div>
+	              <div class="col-sm-4">
+	                <div class="form-group">
+	                	<div class="icon"><span class="icon-user"></span></div>
+			              <input type="text" class="form-control" id="appointment_name" placeholder="Name">
+			            </div>
+	              </div>
+	              <div class="col-sm-4">
+	                <div class="form-group">
+	                	<div class="icon"><span class="icon-paper-plane"></span></div>
+			              <input type="text" class="form-control" id="appointment_email" placeholder="Email">
+			            </div>
+	              </div>
+	            </div>
+	            <div class="row">
+	              <div class="col-sm-4">
+	                <div class="form-group">
+	                	<div class="icon"><span class="ion-ios-calendar"></span></div>
+	                  <input type="text" class="form-control appointment_date" placeholder="Date">
+	                </div>    
+	              </div>
+	              <div class="col-sm-4">
+	                <div class="form-group">
+	                	<div class="icon"><span class="ion-ios-clock"></span></div>
+	                  <input type="text" class="form-control appointment_time" placeholder="Time">
+	                </div>
+	              </div>
+	              <div class="col-sm-4">
+	                <div class="form-group">
+	                	<div class="icon"><span class="icon-phone2"></span></div>
+	                  <input type="text" class="form-control" id="phone" placeholder="Phone">
+	                </div>
+	              </div>
+	            </div>
+	            
+	            <div class="form-group">
+	              <input type="submit" value="Make an Appointment" class="btn btn-primary">
+	            </div>
+	          </form>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+  
+    <section class="ftco-section ftco-services">
+      <div class="container">
+      	<div class="row justify-content-center mb-5 pb-5">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <h2 class="mb-2">Our Service Keep you Smiling</h2>
+            <p>Embrace the warmth of our digital embrace, where we're here to guide and uplift you throughout your incredible journey to motherhood.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-block text-center">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Obstetrics</h3>
+                <p>This department focuses on the care of pregnant women, including prenatal care, labor and delivery, and postpartum care.</p>
+              </div>
+            </div>      
+          </div>
+          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-block text-center">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Gynecology</h3>
+                <p> This department deals with the diagnosis and treatment of conditions related to the female reproductive system, such as menstrual disorders, infertility, and gynecological cancers.</p>
+              </div>
+            </div>    
+          </div>
+          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-block text-center">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Pediatrics</h3>
+                <p>Provide medical care for infants and children.</p>
+              </div>
+            </div>      
+          </div>
+          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-block text-center">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Laboratory and Diagnostic Imaging</h3>
+                <p>These departments perform various tests and imaging studies to aid in the diagnosis and monitoring of maternal and fetal health.</p>
+              </div>
+            </div>      
+          </div>
+        </div>
+      </div>
+      <div class="container-wrap mt-5">
+      	<div class="row d-flex no-gutters">
+      		<div class="col-md-6 img" style="background-image: url({% static 'users/images/about_2.png' %});">
+      		</div>
+      		<div class="col-md-6 d-flex">
+      			<div class="about-wrap">
+      				<div class="heading-section heading-section-white mb-5 ftco-animate">
+		            <h2 class="mb-2">Maternacare with a personal touch</h2>
+		            <p>Embrace the warmth of our digital embrace, where we're here to guide and uplift you throughout your incredible journey to motherhood.</p>
+		          </div>
+      				<div class="list-services d-flex ftco-animate">
+      					<div class="icon d-flex justify-content-center align-items-center">
+      						<span class="icon-check2"></span>
+      					</div>
+      					<div class="text">
+	      					<h3>Well Experienced Gynaecologist</h3>
+	      					<p>Welcome to a world of care, support, and knowledge as you embark on this beautiful journey of motherhood with us.</p>
+      					</div>
+      				</div>
+      				<div class="list-services d-flex ftco-animate">
+      					<div class="icon d-flex justify-content-center align-items-center">
+      						<span class="icon-check2"></span>
+      					</div>
+      					<div class="text">
+	      					<h3>High Technology Facilities</h3>
+	      					<p>Step into our virtual haven designed to nurture you through every trimester and beyond. Welcome to a community that celebrates the miracle of life.</p>
+      					</div>
+      				</div>
+      				<div class="list-services d-flex ftco-animate">
+      					<div class="icon d-flex justify-content-center align-items-center">
+      						<span class="icon-check2"></span>
+      					</div>
+      					<div class="text">
+	      					<h3>Comfortable Clinics</h3>
+	      					<p>Step into a world of maternal care that's as unique as your pregnancy journey. Welcome to an empowering community dedicated to you.</p>
+      					</div>
+      				</div>
+      			</div>
+      		</div>
+      	</div>
+      </div>
+    </section>
+
+
+    <section class="ftco-section">
+      <div class="container">
+      	<div class="row justify-content-center mb-5 pb-5">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <h2 class="mb-3">Meet Our Experienced Doctors</h2>
+            <p>Embrace the warmth of our digital embrace, where we're here to guide and uplift you throughout your incredible journey to motherhood.</p>
+          </div>
+        </div>
+        <div class="row">
+        	<div class="col-lg-3 col-md-6 d-flex mb-sm-4 ftco-animate">
+        		<div class="staff">
+      				<div class="img mb-4" style="background-image: url({% static 'users/images/doctor.png' %});"></div>
+      				<div class="info text-center">
+      					<h3><a href="teacher-single.html">Dr. Emily Thompson</a></h3>
+      					<span class="position">Obstetrician </span>
+      					<div class="text">
+	        				<p>A compassionate and experienced obstetrician who specializes in high-risk pregnancies. She is known for her expertise in managing complicated medical conditions during pregnancy and ensuring the well-being of both the mother and the baby. Dr. Thompson is dedicated to providing personalized care and support to her patients throughout their pregnancy journey.</p>
+	        				<ul class="ftco-social">
+			              <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+			              <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+			              <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+			              <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
+			            </ul>
+	        			</div>
+      				</div>
+        		</div>
+        	</div>
+        	<div class="col-lg-3 col-md-6 d-flex mb-sm-4 ftco-animate">
+        		<div class="staff">
+      				<div class="img mb-4" style="background-image: url({% static 'users/images/doctor.png' %});"></div>
+      				<div class="info text-center">
+      					<h3><a href="teacher-single.html">Dr. Michael Rodriguez</a></h3>
+      					<span class="position">Gynaecologist</span>
+      					<div class="text">
+	        				<p>A skilled gynecologist and fertility specialist. He is passionate about helping couples struggling with infertility and offers a wide range of treatment options, including assisted reproductive technologies. Dr. Rodriguez is known for his empathetic approach and his commitment to guiding his patients through the emotional and physical challenges of fertility treatments.</p>
+	        				<ul class="ftco-social">
+			              <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+			              <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+			              <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+			              <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
+			            </ul>
+	        			</div>
+      				</div>
+        		</div>
+        	</div>
+        	<div class="col-lg-3 col-md-6 d-flex mb-sm-4 ftco-animate">
+        		<div class="staff">
+      				<div class="img mb-4" style="background-image: url({% static 'users/images/doctor.png' %});"></div>
+      				<div class="info text-center">
+      					<h3><a href="teacher-single.html">Dr. Sarah Collins</a></h3>
+      					<span class="position">Pediatric</span>
+      					<div class="text">
+	        				<p>A dedicated pediatrician with a special interest in neonatal care. She has extensive experience in caring for premature babies and ensuring their healthy development. Dr. Collins is known for her gentle and nurturing approach, providing comprehensive care to newborns and supporting parents in understanding their baby's unique needs.</p>
+	        				<ul class="ftco-social">
+			              <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+			              <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+			              <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+			              <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
+			            </ul>
+	        			</div>
+      				</div>
+        		</div>
+        	</div>
+        	<div class="col-lg-3 col-md-6 d-flex mb-sm-4 ftco-animate">
+        		<div class="staff">
+      				<div class="img mb-4" style="background-image: url({% static 'users/images/doctor.png' %});"></div>
+      				<div class="info text-center">
+      					<h3><a href="teacher-single.html">Dr. David Johnson</a></h3>
+      					<span class="position"> breastfeeding specialist</span>
+      					<div class="text">
+	        				<p>a respected lactation consultant and breastfeeding specialist. He is passionate about promoting breastfeeding as the optimal way to nourish infants and provides guidance and support to new mothers. Dr. Johnson is known for his patience and expertise in addressing breastfeeding challenges, helping mothers establish a successful breastfeeding relationship with their babies.</p>
+	        				<ul class="ftco-social">
+			              <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+			              <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+			              <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+			              <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
+			            </ul>
+	        			</div>
+      				</div>
+        		</div>
+        	</div>
+        </div>
+        <div class="row  mt-5 justify-conten-center">
+        	<div class="col-md-8 ftco-animate">
+        		<p>Embrace the warmth of our digital embrace, where we're here to guide and uplift you throughout your incredible journey to motherhood.</p>  
+        	</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url({% static 'users/images/bg_1.png' %});" data-stellar-background-ratio="0.5">
+    	<div class="container">
+    		<div class="row d-flex align-items-center">
+    			<div class="col-md-3 aside-stretch py-5">
+    				<div class=" heading-section heading-section-white ftco-animate pr-md-4">
+	            <h2 class="mb-3">Achievements</h2>
+	            <p>Embrace the warmth of our digital embrace, where we're here to guide and uplift you throughout your incredible journey to motherhood.</p>
+	          </div>
+    			</div>
+    			<div class="col-md-9 py-5 pl-md-5">
+		    		<div class="row">
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="10">0</strong>
+		                <span>Years of Experience</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="200">0</strong>
+		                <span>Qualified Gynaecologists</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="4000">0</strong>
+		                <span>Happy Smiling Mothers</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="300">0</strong>
+		                <span>Patients Per Year</span>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+	      </div>
+    	</div>
+    </section>
+
+    <section class="ftco-section">
+    	<div class="container">
+    		<div class="row justify-content-center mb-5 pb-5">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <h2 class="mb-3">Our Best Pricing</h2>
+            <p>Embrace the warmth of our digital embrace, where we're here to guide and uplift you throughout your incredible journey to motherhood.</p>
+          </div>
+        </div>
+    		<div class="row">
+        	<div class="col-md-3 ftco-animate">
+        		<div class="pricing-entry pb-5 text-center">
+        			<div>
+	        			<h3 class="mb-4">Basic</h3>
+	        			<p><span class="price">Ksh 1,500</span> <span class="per">/ month</span></p>
+	        		</div>
+        			<ul>
+        				<li>Access to essential maternal care resources and articles</li>
+								<li>Weekly pregnancy tips and reminders via email</li>
+								<li>24/7 customer support</li>
+        			<p class="button text-center"><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">Order now</a></p>
+        		</div>
+        	</div>
+        	<div class="col-md-3 ftco-animate">
+        		<div class="pricing-entry pb-5 text-center">
+        			<div>
+	        			<h3 class="mb-4">Standard</h3>
+	        			<p><span class="price">Ksh 3,000</span> <span class="per">/ month</span></p>
+	        		</div>
+        			<ul>
+        				<li>All features of the Basic Plan</li>
+								<li>Monthly virtual check-ins with a certified maternal care specialist</li>
+								<li>Personalized pregnancy tracking and monitoring</li>
+        			</ul>
+        			<p class="button text-center"><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">Order now</a></p>
+        		</div>
+        	</div>
+        	<div class="col-md-3 ftco-animate">
+        		<div class="pricing-entry active pb-5 text-center">
+        			<div>
+	        			<h3 class="mb-4">Premium</h3>
+	        			<p><span class="price">Ksh 5,500</span> <span class="per">/ month</span></p>
+	        		</div>
+        			<ul>
+        				<li>All features of the Standard Plan</li>
+								<li>Unlimited access to a library of prenatal and postnatal exercise videos</li>
+								<li>Exclusive discounts on partner products and services</li>
+								<li>Priority customer support</li>
+        			</ul>
+        			<p class="button text-center"><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">Order now</a></p>
+        		</div>
+        	</div>
+        	<div class="col-md-3 ftco-animate">
+        		<div class="pricing-entry pb-5 text-center">
+        			<div>
+	        			<h3 class="mb-4">Platinum</h3>
+	        			<p><span class="price">Ksh 8,000</span> <span class="per">/ month</span></p>
+	        		</div>
+        			<ul>
+        				<li>All features of the Premium Plan</li>
+								<li>Personalized nutrition and meal planning guidance</li>
+								<li>Weekly virtual check-ins with a dedicated maternal care specialist</li>
+								<li>Access to live webinars and workshops on various maternal health topics</li>
+        			</ul>
+        			<p class="button text-center"><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">Order now</a></p>
+        		</div>
+        	</div>
+        </div>
+    	</div>
+    </section>
+
+    <section class="ftco-section-parallax">
+      <div class="parallax-img d-flex align-items-center">
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+              <h2>Subcribe to our Newsletter</h2>
+              <p>Embrace the warmth of our digital embrace, where we're here to guide and uplift you throughout your incredible journey to motherhood.</p>
+              <div class="row d-flex justify-content-center mt-5">
+                <div class="col-md-8">
+                  <form action="#" class="subscribe-form">
+                    <div class="form-group d-flex">
+                      <input type="text" class="form-control" placeholder="Enter email address">
+                      <input type="submit" value="Subscribe" class="submit px-3">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+		
+		<section class="ftco-section testimony-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <h2 class="mb-2">Testimonies</h2>
+            <span class="subheading">Our Happy Mothers & Fathers Say</span>
+          </div>
+        </div>
+        <div class="row justify-content-center ftco-animate">
+          <div class="col-md-8">
+            <div class="carousel-testimony owl-carousel ftco-owl">
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({% static 'users/images/person_1.png' %})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5">Being a mother, especially a new one, has never been easier. MaternaCare has greatly helped in my journey </p>
+                    <p class="name">Angela Melo</p>
+                    <span class="position">New Mother</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({% static 'users/images/person_1.png' %})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5">I've experienced the benefit of this web app as I saw my wife use it throughout our second pregnancy. It's the best</p>
+                    <p class="name">Dennis Marua</p>
+                    <span class="position">Husband & Father</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({% static 'users/images/person_1.png' %})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5">The doctors are simply amazing. Thank you MaternaCare</p>
+                    <p class="name">Joyce Mwangi</p>
+                    <span class="position">Mother</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({% static 'users/images/person_1.png' %})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5">I love everything about this web app.</p>
+                    <p class="name">Emily Ndwale</p>
+                    <span class="position">Wife</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({% static 'users/images/person_1.png' %})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5">Simply amazing</p>
+                    <p class="name">Ezekiel Banda</p>
+                    <span class="position">Father</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+		
+		<section class="ftco-gallery">
+    	<div class="container-wrap">
+    		<div class="row no-gutters">
+					<div class="col-md-3 ftco-animate">
+						<a href="#" class="gallery img d-flex align-items-center" style="background-image: url({% static 'users/images/bg_1.png' %});">
+							<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<span class="icon-search"></span>
+    					</div>
+						</a>
+					</div>
+					<div class="col-md-3 ftco-animate">
+						<a href="#" class="gallery img d-flex align-items-center" style="background-image: url({% static 'users/images/bg_1.png' %});">
+							<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<span class="icon-search"></span>
+    					</div>
+						</a>
+					</div>
+					<div class="col-md-3 ftco-animate">
+						<a href="#" class="gallery img d-flex align-items-center" style="background-image: url({% static 'users/images/bg_1.png' %});">
+							<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<span class="icon-search"></span>
+    					</div>
+						</a>
+					</div>
+					<div class="col-md-3 ftco-animate">
+						<a href="#" class="gallery img d-flex align-items-center" style="background-image: url({% static 'users/images/bg_1.png' %});">
+							<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<span class="icon-search"></span>
+    					</div>
+						</a>
+					</div>
+        </div>
+    	</div>
+    </section>
+
+    <section class="ftco-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <h2 class="mb-2">Latest Blog</h2>
+            <p>Embrace the warmth of our digital embrace, where we're here to guide and uplift you throughout your incredible journey to motherhood.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 ftco-animate">
+            <div class="blog-entry">
+              <a href="blog_single.html" class="block-20" style="background-image: url({% static 'users/images/image_1.png' %});">
+              </a>
+              <div class="text d-flex py-4">
+                <div class="meta mb-3">
+                  <div><a href="#">Dec 08, 2020</a></div>
+                  <div><a href="#">Admin</a></div>
+                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                </div>
+                <div class="desc pl-3">
+	                <h3 class="heading"><a href="https://www.pregactive.com/blog/best-pregnancy-blogs">12 Best Pregnany Blogs in 2023</a></h3>
+	              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ftco-animate">
+            <div class="blog-entry" data-aos-delay="100">
+              <a href="blog_single.html" class="block-20" style="background-image: url({% static 'users/images/image_1.png' %});">
+              </a>
+              <div class="text d-flex py-4">
+                <div class="meta mb-3">
+                  <div><a href="#">Dec 08, 2020</a></div>
+                  <div><a href="#">Admin</a></div>
+                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                </div>
+                <div class="desc pl-3">
+	                <h3 class="heading"><a href="https://www.pregactive.com/blog/best-pregnancy-blogs">12 Best Pregnany Blogs in 2023</a></h3>
+	              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ftco-animate">
+            <div class="blog-entry" data-aos-delay="200">
+              <a href="blog_single.html" class="block-20" style="background-image: url({% static 'users/images/image_1.png' %});">
+              </a>
+              <div class="text d-flex py-4">
+                <div class="meta mb-3">
+                  <div><a href="#">Dec 08, 2020</a></div>
+                  <div><a href="#">Admin</a></div>
+                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                </div>
+                <div class="desc pl-3">
+	                <h3 class="heading"><a href="https://www.pregactive.com/blog/best-pregnancy-blogs">12 Best Pregnany Blogs in 2023</a></h3>
+	              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+		
+		<section class="ftco-quote">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-md-6 pr-md-5 aside-stretch py-5 choose">
+    				<div class="heading-section heading-section-white mb-5 ftco-animate">
+	            <h2 class="mb-2">MaternaCare Procedure &amp; High Quality Services</h2>
+	          </div>
+	          <div class="ftco-animate">
+	          	<p>MaternaCare Procedure is a comprehensive and innovative approach to prenatal and postnatal care, designed to provide expectant mothers with the highest quality services. </p>
+	          	<ul class="un-styled my-5">
+	          		<li><span class="icon-check"></span>Well Experienced Gynaecologist</li>
+	          		<li><span class="icon-check"></span>High Technology Facilities</li>
+	          		<li><span class="icon-check"></span>Comfortable Clinics</li>
+	          	</ul>
+	          </div>
+    			</div>
+    			<div class="col-md-6 py-5 pl-md-5">
+    				<div class="heading-section mb-5 ftco-animate">
+	            <h2 class="mb-2">Get a Free Quote</h2>
+	          </div>
+	          <form action="#" class="ftco-animate">
+	          	<div class="row">
+	          		<div class="col-md-6">
+		              <div class="form-group">
+		                <input type="text" class="form-control" placeholder="Full Name">
+		              </div>
+	              </div>
+	              <div class="col-md-6">
+		              <div class="form-group">
+		                <input type="text" class="form-control" placeholder="Email">
+		              </div>
+	              </div>
+	              <div class="col-md-6">
+	              	<div class="form-group">
+		                <input type="text" class="form-control" placeholder="Phone">
+		              </div>
+		            </div>
+	              <div class="col-md-6">
+	              	<div class="form-group">
+		                <input type="text" class="form-control" placeholder="Website">
+		              </div>
+		            </div>
+		            <div class="col-md-12">
+		              <div class="form-group">
+		                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+		              </div>
+		            </div>
+		            <div class="col-md-12">
+		              <div class="form-group">
+		                <input type="submit" value="Get a Quote" class="btn btn-primary py-3 px-5">
+		              </div>
+	              </div>
+              </div>
+            </form>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+		
+
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-3">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">MaternaCare.</h2>
+              <p>Embrace the warmth of our digital embrace, where we're here to guide and uplift you throughout your incredible journey to motherhood.</p>
+            </div>
+            <ul class="ftco-footer-social list-unstyled float-md-left float-lft ">
+              <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+              <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+              <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <div class="ftco-footer-widget mb-4 ml-md-5">
+              <h2 class="ftco-heading-2">Quick Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="#" class="py-2 d-block">About</a></li>
+                <li><a href="#" class="py-2 d-block">Features</a></li>
+                <li><a href="#" class="py-2 d-block">Projects</a></li>
+                <li><a href="#" class="py-2 d-block">Blog</a></li>
+                <li><a href="#" class="py-2 d-block">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4 pr-md-4">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Recent Blog</h2>
+              <div class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" style="background-image: url({% static 'users/images/image_1.png' %});"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="https://www.pregactive.com/blog/best-pregnancy-blogs">12 Best Pregnany Blogs in 2023</a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="icon-calendar"></span> Dec 08, 2020</a></div>
+                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" style="background-image: url({% static 'users/images/image_1.png' %});"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="https://www.pregactive.com/blog/best-pregnancy-blogs">12 Best Pregnany Blogs in 2022</a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="icon-calendar"></span> Dec 08, 2020</a></div>
+                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Office</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><span class="icon icon-map-marker"></span><span class="text">123 Health Avenue, Westlands, Nairobi, Kenya</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+254 715 402 174</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@maternacare.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p>All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://www.linkedin.com/in/mwithaliidiana/" target="_blank">Mwithalii</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modalRequest" tabindex="-1" role="dialog" aria-labelledby="modalRequestLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalRequestLabel">Make an Appointment</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="{% url 'form' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+              <!-- <label for="appointment_name" class="text-black">Full Name</label> -->
+              <input type="text" class="form-control" id="appointment_name" placeholder="Full Name">
+            </div>
+            <div class="form-group">
+              <!-- <label for="appointment_email" class="text-black">Email</label> -->
+              <input type="text" class="form-control" id="appointment_email" placeholder="Email">
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <!-- <label for="appointment_date" class="text-black">Date</label> -->
+                  <input type="text" class="form-control appointment_date" placeholder="Date">
+                </div>    
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <!-- <label for="appointment_time" class="text-black">Time</label> -->
+                  <input type="text" class="form-control appointment_time" placeholder="Time">
+                </div>
+              </div>
+            </div>
+            
+
+            <div class="form-group">
+              <!-- <label for="appointment_message" class="text-black">Message</label> -->
+              <textarea name="" id="appointment_message" class="form-control" cols="30" rows="10" placeholder="Message"></textarea>
+            </div>
+            <div class="form-group">
+              <input type="submit" value="Make an Appointment" class="btn btn-primary">
+            </div>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <script src="{% static 'matapp/js/jquery.min.js' %}"></script>
+  <script src="{% static 'matapp/js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'matapp/js/popper.min.js' %}"></script>
+  <script src="{% static 'matapp/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'matapp/js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'matapp/js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'matapp/js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'matapp/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'matapp/js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'matapp/js/aos.js' %}"></script>
+  <script src="{% static 'matapp/js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'matapp/js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'matapp/js/jquery.timepicker.min.js' %}"></script>
+  <script src="{% static 'matapp/js/scrollax.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'matapp/js/google-map.js' %}"></script>
+  <script src="{% static 'matapp/js/main.js' %}"></script>
+    
+  </body>
+</html>
